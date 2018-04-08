@@ -1,0 +1,71 @@
+[core]
+	filemode = false
+	editor = gedit
+	whitespace = cr-at-eol
+	ignorecase = false
+[user]
+	email = virtualdogbert@gmail.com
+	name = Software Engineering  Geek
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[merge]
+	log = true
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lu = log -u
+	f = "!git ls-files | grep -i"
+	cp = cherry-pick
+	sl = stash list
+	sa = stash apply
+    ss = stash save
+	sp = stash pop
+[diff]
+	tool = meld
+[mergetool "meld"]
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
+	trustExitCode = false
+[guitool "1. stat"]
+	cmd = git status
+[guitool "4. stash"]
+	cmd = git stash
+[guitool "5. apply stash"]
+	cmd = git stash apply
+[guitool "3. stash list"]
+	cmd = git stash list
+[guitool "2. blame"]
+	cmd = git blame $FILENAME
+	needsfile = yes
+[guitool "6. Revert File"]
+	cmd = git checkout $FILENAME
+	needsfile = yes
+	confirm = yes
+[guitool "7. Remove File"]
+	cmd = rm $FILENAME
+	needsfile = yes
+	confirm = yes
+[guitool "8. Reset Hard"]
+	cmd = git reset --hard
+	noconsole = yes
+	confirm = yes
+
+[gui]
+	spellingdictionary = en_US
+	fontui = -family \"DejaVu Sans\" -size 14 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"DejaVu Sans Mono\" -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+[guitool "gui blame"]
+	cmd = git gui blame $FILENAME
+	needsfile = yes
+[mergetool]
+	keepBackup = false
+[guitool "new status"]
+	cmd = git st
+	confirm = yes
+
